@@ -1,3 +1,10 @@
+"use client";
+import Navbar from "../components/Navbar";
+
 export default function Main() {
-  return <h1 className="text-3xl">Main Page</h1>;
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+    </div>
+  );
 }
