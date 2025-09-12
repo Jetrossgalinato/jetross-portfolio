@@ -15,8 +15,8 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Round Navbar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden md:block">
-        <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-full px-8 py-4 shadow-lg border border-green-200/50 dark:border-green-800/50">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden md:block transition-colors duration-300">
+        <div className="backdrop-blur-sm rounded-full px-8 py-4 shadow-lg border border-green-200/50 dark:border-green-800/50">
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (
               <a
@@ -35,7 +35,7 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-green-200 dark:border-green-800 md:hidden">
+      <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-green-200 dark:border-green-800 md:hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="font-bold text-xl text-green-800 dark:text-green-400">

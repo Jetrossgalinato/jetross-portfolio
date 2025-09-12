@@ -19,12 +19,12 @@ export default function Main() {
     <>
       {isLoading && <Preloader />}
       <div
-        className={`min-h-screen relative overflow-hidden transition-all duration-500 ${
+        className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
         {/* Dynamic Background Layer */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 transition-colors duration-300" />
 
         {/* Subtle Pattern Overlay */}
         <div className="absolute inset-0 opacity-30 dark:opacity-20">
