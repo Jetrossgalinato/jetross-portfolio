@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Preloader from "../../components/Preloader";
 import StarryBackground from "../../components/StarfieldBackground";
+import Header from "../../components/Header";
 
 export default function Main() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -20,7 +21,7 @@ export default function Main() {
     <>
       {isLoading && <Preloader />}
       <div
-        className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${
+        className={`min-h-screen relative overflow-hidden transition duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -37,7 +38,7 @@ export default function Main() {
                 : "opacity-100 translate-y-0"
             }`}
           >
-            {/* <Header /> */}
+            <Header />
           </div>
         </div>
       </div>
