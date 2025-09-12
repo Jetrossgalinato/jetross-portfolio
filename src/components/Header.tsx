@@ -1,4 +1,19 @@
 "use client";
+import dynamic from "next/dynamic";
+
+// Dynamically import the MapComponent with no SSR
+const MapComponent = dynamic(() => import("./Map"), {
+  ssr: false,
+  loading: () => (
+    <div className="mb-8">
+      <div className="relative h-48 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+        <div className="animate-pulse text-gray-500 dark:text-gray-400">
+          Loading map...
+        </div>
+      </div>
+    </div>
+  ),
+});
 
 interface HeaderProps {
   subtitle?: string;
@@ -7,7 +22,16 @@ interface HeaderProps {
 export default function Header({}: HeaderProps) {
   return (
     <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20">
-      <div className="max-w-lg mx-auto w-full">
+      <div className="max-w-lg mx-auto w-full ">
+        {/* Map Section */}
+        <MapComponent
+          latitude={8.93}
+          longitude={125.53}
+          location="Ampayon, Butuan City, Philippines"
+          timezone="Philippine Time"
+          height="h-48"
+        />
+
         {/* Header Section with Avatar and Name */}
         <div className="flex items-center space-x-4 mb-6">
           {/* Avatar */}

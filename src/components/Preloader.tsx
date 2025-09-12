@@ -21,7 +21,7 @@ const Preloader = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-gray-900 transition-all duration-500">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black transition-all duration-500">
       {/* Main preloader container */}
       <div className="text-center">
         {/* GIF Animation */}
