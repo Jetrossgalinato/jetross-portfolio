@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 interface HeaderProps {
   subtitle?: string;
@@ -14,13 +13,12 @@ export default function Header({}: HeaderProps) {
           {/* Avatar */}
           <div className="relative">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-white/20 shadow-lg">
-              <Image
-                src="/avatar.jpg"
+              <img
+                src="/profile.jpeg"
                 alt="Jetross Avatar"
                 width={48}
                 height={48}
                 className="w-full h-full object-cover"
-                priority
               />
             </div>
           </div>
