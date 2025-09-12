@@ -21,11 +21,72 @@ export default function MapComponent({
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const [currentTime, setCurrentTime] = useState<string>("");
   const [isClient, setIsClient] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   // Ensure we're on the client side
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Monitor theme changes
+  useEffect(() => {
+    if (!isClient) return;
+
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setIsDarkTheme(isDark);
+    };
+
+    // Initial theme check
+    checkTheme();
+
+    // Create a MutationObserver to watch for class changes on the html element
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          checkTheme();
+        }
+      });
+    });
+
+    // Start observing
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, [isClient]);
+
+  // Update map tiles when theme changes
+  useEffect(() => {
+    if (!mapInstanceRef.current || !tileLayerRef.current || !isClient) return;
+
+    // Remove current tile layer
+    mapInstanceRef.current.removeLayer(tileLayerRef.current);
+
+    // Import Leaflet dynamically
+    import("leaflet").then((leafletModule) => {
+      const L = leafletModule.default || leafletModule;
+
+      // Choose tile layer based on theme
+      const tileUrl = isDarkTheme
+        ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" // Dark theme tiles
+        : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"; // Light theme tiles
+
+      const attribution = isDarkTheme
+        ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        : "© OpenStreetMap contributors";
+
+      // Create new tile layer
+      tileLayerRef.current = L.tileLayer(tileUrl, {
+        attribution: attribution,
+      }).addTo(mapInstanceRef.current!);
+    });
+  }, [isDarkTheme, isClient]);
 
   // Update time every second
   useEffect(() => {
@@ -81,17 +142,25 @@ export default function MapComponent({
 
       mapInstanceRef.current = map;
 
-      // Add standard OpenStreetMap tiles (light theme only)
-      tileLayerRef.current = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          attribution: "© OpenStreetMap contributors",
-        }
-      ).addTo(map);
+      // Choose initial tile layer based on current theme
+      const initialIsDark = document.documentElement.classList.contains("dark");
+      const tileUrl = initialIsDark
+        ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+        : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
-      // Custom marker icon
+      const attribution = initialIsDark
+        ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        : "© OpenStreetMap contributors";
+
+      // Add initial tile layer
+      tileLayerRef.current = L.tileLayer(tileUrl, {
+        attribution: attribution,
+      }).addTo(map);
+
+      // Custom marker icon that adapts to theme
+      const markerColor = initialIsDark ? "#ef4444" : "#ef4444";
       const customIcon = L.divIcon({
-        html: '<div style="background: #ef4444; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>',
+        html: `<div style="background: ${markerColor}; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>`,
         className: "custom-marker",
         iconSize: [20, 20],
         iconAnchor: [10, 10],
@@ -161,7 +230,7 @@ export default function MapComponent({
           className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
           style={{ zIndex: 1000 }}
         >
-          📍 {getLocationText()}
+          {getLocationText()}
         </div>
 
         {/* Time Text - Top Right overlay */}
@@ -169,7 +238,7 @@ export default function MapComponent({
           className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
           style={{ zIndex: 1000 }}
         >
-          🕒 {currentTime}
+          {currentTime}
         </div>
 
         {/* Transparent Fade at Bottom overlay */}
