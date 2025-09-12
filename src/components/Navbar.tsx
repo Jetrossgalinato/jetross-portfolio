@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Round Navbar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden md:block transition-colors duration-300">
+      <nav className="fixed top-12 left-1/2 transform -translate-x-1/2 z-50 hidden md:block transition-colors duration-300">
         <div className="backdrop-blur-sm rounded-full px-8 py-4 shadow-lg border border-green-200/50 dark:border-green-800/50">
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (
