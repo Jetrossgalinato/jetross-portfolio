@@ -147,22 +147,36 @@ export default function MapComponent({
     <div className="mb-8">
       <div
         className={`relative ${height} w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg`}
+        style={{ isolation: "isolate" }}
       >
-        {/* Map Container - Base layer */}
-        <div ref={mapRef} className="w-full h-full"></div>
+        {/* Map Container - Base layer with explicit z-index */}
+        <div
+          ref={mapRef}
+          className="absolute inset-0 w-full h-full"
+          style={{ zIndex: 1 }}
+        ></div>
 
         {/* Location Text - Top Left overlay */}
-        <div className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm">
+        <div
+          className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
+          style={{ zIndex: 1000 }}
+        >
           📍 {getLocationText()}
         </div>
 
         {/* Time Text - Top Right overlay */}
-        <div className="absolute top-4 right-4 z-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm">
+        <div
+          className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
+          style={{ zIndex: 1000 }}
+        >
           🕒 {currentTime}
         </div>
 
         {/* Transparent Fade at Bottom overlay */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 z-10 bg-gradient-to-t from-white/70 to-transparent dark:from-gray-900/70 pointer-events-none"></div>
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/70 to-transparent dark:from-gray-900/70 pointer-events-none transition duration-300"
+          style={{ zIndex: 999 }}
+        ></div>
       </div>
     </div>
   );
