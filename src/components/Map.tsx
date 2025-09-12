@@ -35,9 +35,9 @@ export default function MapComponent({
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
-        timeZone: "UTC",
+        timeZone: "Asia/Manila", // Changed from UTC to Philippine timezone
       });
-      setCurrentTime(`${timeString} UTC`);
+      setCurrentTime(`${timeString} PHT`); // Changed from UTC to PHT
     };
 
     updateTime(); // Initial call
