@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import TechStackComponent from "./TechStack";
 
 // Dynamically import the MapComponent with no SSR
 const MapComponent = dynamic(() => import("./Map"), {
@@ -21,7 +22,7 @@ interface HeaderProps {
 
 export default function Header({}: HeaderProps) {
   return (
-    <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20">
+    <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20 mt-30">
       <div className="max-w-lg mx-auto w-full ">
         {/* Map Section */}
         <MapComponent
@@ -71,10 +72,13 @@ export default function Header({}: HeaderProps) {
         <div className="mb-8">
           <p className="text-md md:text-md text-gray-700 dark:text-gray-200 font-light leading-relaxed max-w-3xl">
             {"I'm"} a creative software developer with three years of
-            experience. I specialize in UI design and crafting engaging user
-            experiences with great attention to detail.
+            experience. I specialize in creating minimalist and clean UI
+            designed softwares with smooth performance.
           </p>
         </div>
+
+        {/* Tech Stack Section */}
+        <TechStackComponent />
       </div>
     </div>
   );
