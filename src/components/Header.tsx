@@ -70,9 +70,9 @@ export default function Header({}: HeaderProps) {
         {/* Description */}
         <div className="mb-8">
           <p className="text-md md:text-md text-gray-700 dark:text-gray-200 font-light leading-relaxed max-w-3xl">
-            {"I'm"} a creative software developer with five years of experience.
-            I specialize in UI design and crafting engaging user experiences
-            with great attention to detail.
+            {"I'm"} a creative software developer with three years of
+            experience. I specialize in UI design and crafting engaging user
+            experiences with great attention to detail.
           </p>
         </div>
       </div>
