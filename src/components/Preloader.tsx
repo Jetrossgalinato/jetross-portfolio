@@ -25,14 +25,18 @@ const Preloader = () => {
       {/* Main preloader container */}
       <div className="text-center">
         {/* GIF Animation */}
-        <div className="mb-8">
+        <div className="mb-2">
           <Image
-            src="/loading.gif"
+            src="/waiting.gif"
             alt="Loading Animation"
             width={32}
             height={32}
             className="md:w-48 md:h-48 mx-auto object-contain"
           />
+          {/* Loading text */}
+          <p className=" text-lg font-medium text-gray-700 dark:text-gray-300 animate-pulse">
+            Loading...
+          </p>
         </div>
 
         {/* Progress bar */}
