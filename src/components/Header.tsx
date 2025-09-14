@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import TechStackComponent from "./TechStack";
+import Experience from "./Experience";
 
 // Dynamically import the MapComponent with no SSR
 const MapComponent = dynamic(() => import("./Map"), {
@@ -79,6 +80,8 @@ export default function Header({}: HeaderProps) {
 
         {/* Tech Stack Section */}
         <TechStackComponent />
+
+        <Experience />
       </div>
     </div>
   );
