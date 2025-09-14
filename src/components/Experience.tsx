@@ -42,9 +42,9 @@ const Experience = () => {
         <div className="flex justify-center gap-3 mb-8 text-sm">
           <button
             onClick={() => setActiveTab("work")}
-            className={`px-26 py-3 rounded-lg font-medium text-md transition-all duration-300 ${
+            className={`px-26 py-3 cursor-pointer rounded-lg font-medium text-md transition duration-300 ${
               activeTab === "work"
-                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 shadow-sm"
+                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
@@ -52,9 +52,9 @@ const Experience = () => {
           </button>
           <button
             onClick={() => setActiveTab("studies")}
-            className={`px-26 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-26 py-3 cursor-pointer rounded-lg font-medium transition duration-300 ${
               activeTab === "studies"
-                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 shadow-sm"
+                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >

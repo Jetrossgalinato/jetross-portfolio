@@ -23,7 +23,7 @@ interface HeaderProps {
 
 export default function Header({}: HeaderProps) {
   return (
-    <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20 mt-30">
+    <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20 mt-40">
       <div className="max-w-lg mx-auto w-full ">
         {/* Map Section */}
         <MapComponent
