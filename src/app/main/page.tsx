@@ -21,6 +21,8 @@ export default function Main() {
   return (
     <>
       {isLoading && <Preloader />}
+      {/* Home anchor at absolute top */}
+      <div id="home" />
       <div
         className={`min-h-screen relative overflow-hidden transition duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
@@ -44,6 +46,8 @@ export default function Main() {
           </div>
         </div>
       </div>
+      {/* Contact anchor at absolute bottom */}
+      <div id="contact" />
     </>
   );
 }

@@ -31,7 +31,9 @@ const Experience = () => {
     activeTab === "work" ? workExperience : studiesExperience;
 
   return (
-    <section className="py-16 rounded-lg transition-colors duration-300">
+    <section
+      className="py-16 rounded-lg transition-colors duration-300"
+    >
       <div className="max-w-lg mx-auto ">
         {/* Section Title */}
         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-300 mb-8">

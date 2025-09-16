@@ -25,7 +25,10 @@ interface HeaderProps {
 
 export default function Header({}: HeaderProps) {
   return (
-    <div className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20 mt-40">
+    <section
+      id="home"
+      className="flex flex-col justify-center min-h-[80vh] px-4 md:px-6 lg:px-20 mt-40"
+    >
       <div className="max-w-lg mx-auto w-full ">
         {/* Map Section */}
         <MapComponent
@@ -69,53 +72,54 @@ export default function Header({}: HeaderProps) {
                 Available for work
               </span>
             </div>
-
-            {/* Action Buttons: Resume, LinkedIn, GitHub, Email */}
-            <div className="flex flex-wrap gap-2 mt-4">
-              {/* Resume button: icon + text, gray by default, green on hover, shadow on hover */}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium transition hover:bg-green-600 hover:text-white hover:shadow-lg"
-                title="View Resume"
-              >
-                <FileText size={16} /> Resume
-              </a>
-              {/* LinkedIn icon button: gray by default, blue on hover */}
-              <a
-                href="https://www.linkedin.com/in/jetross-galinato-141ba5361/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-blue-600 hover:text-white hover:shadow-lg"
-                title="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              {/* GitHub icon button: gray by default, dark on hover */}
-              <a
-                href="https://github.com/Jetrossgalinato"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-gray-900 hover:text-white hover:shadow-lg"
-                title="GitHub"
-              >
-                <Github size={20} />
-              </a>
-              {/* Email icon button: gray by default, red on hover */}
-              <a
-                href="mailto:jetrossgalinato@gmail.com"
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-red-600 hover:text-white hover:shadow-lg"
-                title="Email"
-              >
-                <Mail size={20} />
-              </a>
-            </div>
+            <section id="contact">
+              {/* Action Buttons: Resume, LinkedIn, GitHub, Email */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {/* Resume button: icon + text, gray by default, green on hover, shadow on hover */}
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium transition hover:bg-green-600 hover:text-white hover:shadow-lg"
+                  title="View Resume"
+                >
+                  <FileText size={16} /> Resume
+                </a>
+                {/* LinkedIn icon button: gray by default, blue on hover */}
+                <a
+                  href="https://www.linkedin.com/in/jetross-galinato-141ba5361/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-blue-600 hover:text-white hover:shadow-lg"
+                  title="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                {/* GitHub icon button: gray by default, dark on hover */}
+                <a
+                  href="https://github.com/Jetrossgalinato"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-gray-900 hover:text-white hover:shadow-lg"
+                  title="GitHub"
+                >
+                  <Github size={20} />
+                </a>
+                {/* Email icon button: gray by default, red on hover */}
+                <a
+                  href="mailto:jetrossgalinato@gmail.com"
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-red-600 hover:text-white hover:shadow-lg"
+                  title="Email"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
+            </section>
           </div>
         </div>
 
         {/* Description */}
-        <div className="mb-8">
+        <div id="about" className="mb-8">
           <p className="text-md md:text-md text-gray-700 dark:text-gray-200 font-light leading-relaxed max-w-3xl">
             {"I'm"} a creative software developer with three years of
             experience. I specialize in creating minimalist and clean UI
@@ -128,6 +132,6 @@ export default function Header({}: HeaderProps) {
 
         <Experience />
       </div>
-    </div>
+    </section>
   );
 }
