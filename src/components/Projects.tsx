@@ -1,0 +1,131 @@
+import React from "react";
+import Image from "next/image";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image?: string;
+  techStack: string[];
+  liveUrl?: string;
+  repoUrl?: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Personal Portfolio",
+    description:
+      "A minimalist, responsive portfolio built with Next.js, Tailwind CSS, and TypeScript. Features a dynamic theme, interactive map, and smooth animations.",
+    image: "/vercel.svg",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://jetross-portfolio.vercel.app/",
+    repoUrl: "https://github.com/Jetrossgalinato/jetross-portfolio",
+  },
+  {
+    id: 2,
+    title: "Task Manager App",
+    description:
+      "A full-stack task management app with authentication, real-time updates, and drag-and-drop UI.",
+    image: "/file.svg",
+    techStack: ["React", "Supabase", "Tailwind CSS"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: 3,
+    title: "Weather Dashboard",
+    description:
+      "A weather dashboard that fetches real-time weather data and displays it with beautiful charts.",
+    image: "/globe.svg",
+    techStack: ["Next.js", "Chart.js", "OpenWeatherMap API"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+];
+
+const Projects: React.FC = () => {
+  return (
+    <section
+      id="projects"
+      className="py-16 rounded-lg transition-colors duration-300"
+    >
+      <div className="max-w-lg mx-auto ">
+        {/* Section Title */}
+        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-300 mb-8">
+          Projects
+        </h2>
+
+        {/* Projects Grid */}
+        <div className="grid gap-8 md:grid-cols-1">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="relative flex flex-col md:flex-row items-start gap-6 border border-md border-black dark:border-white p-6 rounded-lg shadow-md bg-white/80 dark:bg-gray-900/80"
+            >
+              {/* Project Image */}
+              {project.image && (
+                <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                  <Image
+                    src={project.image}
+                    alt={project.title + " logo"}
+                    width={48}
+                    height={48}
+                    className="object-contain w-12 h-12"
+                  />
+                </div>
+              )}
+
+              {/* Project Content */}
+              <div className="flex-1 min-w-0">
+                {/* Title */}
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
+                  {project.title}
+                  {project.liveUrl && project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-1 text-green-600 dark:text-green-400 hover:underline text-xs font-normal"
+                    >
+                      Live
+                    </a>
+                  )}
+                  {project.repoUrl && project.repoUrl !== "#" && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-1 text-gray-500 dark:text-gray-400 hover:underline text-xs font-normal"
+                    >
+                      Code
+                    </a>
+                  )}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-2">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-2 py-1 rounded text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

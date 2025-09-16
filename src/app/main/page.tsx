@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Preloader from "../../components/Preloader";
 import StarryBackground from "../../components/StarfieldBackground";
 import Header from "../../components/Header";
+import Projects from "../../components/Projects";
 
 export default function Main() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -39,6 +40,7 @@ export default function Main() {
             }`}
           >
             <Header />
+            <Projects />
           </div>
         </div>
       </div>
