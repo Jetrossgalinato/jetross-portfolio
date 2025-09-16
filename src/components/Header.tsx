@@ -2,6 +2,8 @@
 import dynamic from "next/dynamic";
 import TechStackComponent from "./TechStack";
 import Experience from "./Experience";
+import { FileText, Linkedin, Github, Mail } from "lucide-react";
+import Image from "next/image";
 
 // Dynamically import the MapComponent with no SSR
 const MapComponent = dynamic(() => import("./Map"), {
@@ -39,12 +41,13 @@ export default function Header({}: HeaderProps) {
           {/* Avatar */}
           <div className="relative">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-white/20 shadow-lg">
-              <img
+              <Image
                 src="/profile.jpeg"
                 alt="Jetross Avatar"
-                width={48}
-                height={48}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
           </div>
@@ -65,6 +68,48 @@ export default function Header({}: HeaderProps) {
               <span className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">
                 Available for work
               </span>
+            </div>
+
+            {/* Action Buttons: Resume, LinkedIn, GitHub, Email */}
+            <div className="flex flex-wrap gap-2 mt-4">
+              {/* Resume button: icon + text, gray by default, green on hover, shadow on hover */}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium transition hover:bg-green-600 hover:text-white hover:shadow-lg"
+                title="View Resume"
+              >
+                <FileText size={16} /> Resume
+              </a>
+              {/* LinkedIn icon button: gray by default, blue on hover */}
+              <a
+                href="https://www.linkedin.com/in/jetross-galinato-141ba5361/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-blue-600 hover:text-white hover:shadow-lg"
+                title="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              {/* GitHub icon button: gray by default, dark on hover */}
+              <a
+                href="https://github.com/Jetrossgalinato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-gray-900 hover:text-white hover:shadow-lg"
+                title="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              {/* Email icon button: gray by default, red on hover */}
+              <a
+                href="mailto:jetrossgalinato@gmail.com"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-300 border border-gray-200 dark:border-gray-700 shadow transition hover:bg-red-600 hover:text-white hover:shadow-lg"
+                title="Email"
+              >
+                <Mail size={20} />
+              </a>
             </div>
           </div>
         </div>
