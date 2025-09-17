@@ -38,30 +38,30 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="py-16 rounded-lg transition-colors duration-300"
+      className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-16 rounded-lg transition-colors duration-300"
     >
-      <div className="max-w-lg mx-auto ">
+      <div className="max-w-lg mx-auto px-3 sm:px-0">
         {/* Section Title */}
-        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-300 mb-8">
+        <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-300 mb-6 md:mb-8">
           Projects
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-1">
+        <div className="grid gap-4 md:gap-8 md:grid-cols-1">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative flex flex-col md:flex-row items-start gap-6 border border-md border-black dark:border-white p-6 rounded-lg shadow-md bg-white/80 dark:bg-gray-900/80"
+              className="relative flex flex-col md:flex-row items-start gap-4 md:gap-6 border border-md border-black dark:border-white p-4 md:p-6 rounded-lg shadow-md bg-white/80 dark:bg-gray-900/80"
             >
               {/* Project Image */}
               {project.image && (
-                <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                   <Image
                     src={project.image}
                     alt={project.title + " logo"}
-                    width={48}
-                    height={48}
-                    className="object-contain w-12 h-12"
+                    width={40}
+                    height={40}
+                    className="object-contain w-10 h-10 md:w-12 md:h-12"
                   />
                 </div>
               )}
@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
               {/* Project Content */}
               <div className="flex-1 min-w-0">
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
                   {project.title}
                   {project.liveUrl && project.liveUrl !== "#" && (
                     <a
@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-2">
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-1.5 md:mb-2">
                   {project.description}
                 </p>
 

@@ -227,7 +227,7 @@ export default function MapComponent({
 
         {/* Location Text - Top Left overlay */}
         <div
-          className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
+          className="absolute top-3 left-3 md:top-4 md:left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-2.5 py-1.5 md:px-3 md:py-2 text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
           style={{ zIndex: 1000 }}
         >
           {getLocationText()}
@@ -235,7 +235,7 @@ export default function MapComponent({
 
         {/* Time Text - Top Right overlay */}
         <div
-          className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
+          className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-2.5 py-1.5 md:px-3 md:py-2 text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 shadow-sm transition duration-300"
           style={{ zIndex: 1000 }}
         >
           {currentTime}
@@ -243,7 +243,7 @@ export default function MapComponent({
 
         {/* Transparent Fade at Bottom overlay */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/70 to-transparent dark:from-gray-900/70 pointer-events-none transition duration-300"
+          className="absolute bottom-0 left-0 right-0 h-10 md:h-16 bg-gradient-to-t from-white/70 to-transparent dark:from-gray-900/70 pointer-events-none transition duration-300"
           style={{ zIndex: 999 }}
         ></div>
       </div>

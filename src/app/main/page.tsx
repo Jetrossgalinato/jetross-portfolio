@@ -32,7 +32,7 @@ export default function Main() {
         <StarryBackground />
 
         {/* Content Layer */}
-        <div className="relative z-10">
+        <div className="relative z-10 pt-16 md:pt-0">
           <Navbar />
           <div
             className={`transition-all duration-700 ease-out ${

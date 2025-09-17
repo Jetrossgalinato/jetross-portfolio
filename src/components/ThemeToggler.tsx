@@ -36,7 +36,7 @@ const ThemeToggler = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-700 hover:text-green-600 hover:bg-green-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-green-900/20 transition-all duration-300 focus:outline-none"
+      className="p-2.5 md:p-2 rounded-full text-gray-700 hover:text-green-600 hover:bg-green-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-green-900/20 transition-all duration-300 focus:outline-none"
       aria-label="Toggle theme"
     >
       {isDark ? <Sun size={20} /> : <Moon size={20} />}
