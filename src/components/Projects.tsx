@@ -19,8 +19,8 @@ const projects: Project[] = [
       "A meal subscription and delivery platform that enables users to order food and subscribe to premium meal plans with exclusive benefits. Features include customizable meal plans, scheduled deliveries, and subscriber rewards.",
     image: "/mealmate.png",
     techStack: ["Vue.js", "JavaScript", "Laravel"],
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://meal-subscription-frontend.vercel.app/#/",
+    repoUrl: "https://github.com/Jetrossgalinato/meal-subscription-frontend",
   },
   {
     id: 2,
@@ -31,16 +31,6 @@ const projects: Project[] = [
     techStack: ["React.js", "TypeScript", "Django"],
     liveUrl: "#",
     repoUrl: "https://github.com/Jetrossgalinato/Finteach",
-  },
-  {
-    id: 3,
-    title: "Personal Portfolio",
-    description:
-      "A minimalist, responsive portfolio built with Next.js, Tailwind CSS, and TypeScript. Features a dynamic theme, interactive map, and smooth animations.",
-    image: "/vercel.svg",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://jetross-portfolio.vercel.app/",
-    repoUrl: "https://github.com/Jetrossgalinato/jetross-portfolio",
   },
 ];
 
