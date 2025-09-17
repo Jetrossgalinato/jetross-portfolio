@@ -14,6 +14,16 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "Mealmate",
+    description:
+      "A meal subscription and delivery platform that enables users to order food and subscribe to premium meal plans with exclusive benefits. Features include customizable meal plans, scheduled deliveries, and subscriber rewards.",
+    image: "/mealmate.png",
+    techStack: ["Vue.js", "JavaScript", "Laravel"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: 2,
     title: "Finteach",
     description:
       "A financial monitoring system with AI financial advisor that helps you manage your finances. Features smart budgeting recommendations, expense tracking, and personalized financial insights.",
@@ -23,7 +33,7 @@ const projects: Project[] = [
     repoUrl: "https://github.com/Jetrossgalinato/Finteach",
   },
   {
-    id: 2,
+    id: 3,
     title: "Personal Portfolio",
     description:
       "A minimalist, responsive portfolio built with Next.js, Tailwind CSS, and TypeScript. Features a dynamic theme, interactive map, and smooth animations.",
@@ -31,16 +41,6 @@ const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://jetross-portfolio.vercel.app/",
     repoUrl: "https://github.com/Jetrossgalinato/jetross-portfolio",
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description:
-      "A weather dashboard that fetches real-time weather data and displays it with beautiful charts.",
-    image: "/globe.svg",
-    techStack: ["Next.js", "Chart.js", "OpenWeatherMap API"],
-    liveUrl: "#",
-    repoUrl: "#",
   },
 ];
 
