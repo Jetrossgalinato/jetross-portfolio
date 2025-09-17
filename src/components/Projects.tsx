@@ -14,6 +14,16 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "Finteach",
+    description:
+      "A financial monitoring system with AI financial advisor that helps you manage your finances. Features smart budgeting recommendations, expense tracking, and personalized financial insights.",
+    image: "/finteach.svg",
+    techStack: ["React.js", "TypeScript", "Django"],
+    liveUrl: "#",
+    repoUrl: "https://github.com/Jetrossgalinato/Finteach",
+  },
+  {
+    id: 2,
     title: "Personal Portfolio",
     description:
       "A minimalist, responsive portfolio built with Next.js, Tailwind CSS, and TypeScript. Features a dynamic theme, interactive map, and smooth animations.",
@@ -21,16 +31,6 @@ const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://jetross-portfolio.vercel.app/",
     repoUrl: "https://github.com/Jetrossgalinato/jetross-portfolio",
-  },
-  {
-    id: 2,
-    title: "Task Manager App",
-    description:
-      "A full-stack task management app with authentication, real-time updates, and drag-and-drop UI.",
-    image: "/file.svg",
-    techStack: ["React", "Supabase", "Tailwind CSS"],
-    liveUrl: "#",
-    repoUrl: "#",
   },
   {
     id: 3,
