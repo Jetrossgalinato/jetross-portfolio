@@ -2,7 +2,8 @@ import ThemeToggler from "./ThemeToggler";
 
 const Navbar = () => {
   // Mobile state removed; desktop navbar used on all sizes
-
+  //add more spacing
+  
   const navItems = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
