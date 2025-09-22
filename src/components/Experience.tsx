@@ -33,7 +33,7 @@ const Experience = () => {
 
   return (
     <section className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-16 rounded-lg transition-colors duration-300">
-      <div className="max-w-lg mx-auto px-3 sm:px-0 ">
+      <div className="max-w-5xl mx-auto px-3 sm:px-0 ">
         {/* Section Title */}
         <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-300 mb-6 md:mb-8">
           Experience

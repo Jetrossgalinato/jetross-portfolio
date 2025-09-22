@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface TechItem {
   name: string;
   iconUrl: string;
@@ -83,7 +85,7 @@ export default function TechStackComponent() {
   ];
 
   return (
-    <div className="w-full max-w-lg mx-auto">
+    <div className="w-full max-w-5xl mx-auto">
       <div className="grid grid-cols-4 gap-3">
         {techStack.map((tech) => (
           <div
@@ -95,17 +97,25 @@ export default function TechStackComponent() {
                 className={`${tech.bgColor} rounded-xl p-2 mb-3 transition-all duration-300 group-hover:scale-110`}
               >
                 {/* Default Icon */}
-                <img
-                  src={tech.iconUrl}
-                  alt={tech.name}
-                  className="w-5 h-5 transition-opacity duration-300 group-hover:opacity-0 absolute"
-                />
+                <div className="relative w-5 h-5">
+                  <Image
+                    src={tech.iconUrl}
+                    alt={tech.name}
+                    fill
+                    sizes="20px"
+                    className="transition-opacity duration-300 group-hover:opacity-0 object-contain"
+                  />
+                </div>
                 {/* Hover Icon */}
-                <img
-                  src={tech.hoverIconUrl}
-                  alt={tech.name}
-                  className="w-5 h-5 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-                />
+                <div className="relative w-5 h-5">
+                  <Image
+                    src={tech.hoverIconUrl}
+                    alt={`${tech.name} hover`}
+                    fill
+                    sizes="20px"
+                    className="transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-contain"
+                  />
+                </div>
               </div>
 
               <p className="text-gray-900 dark:text-white text-xs font-medium">

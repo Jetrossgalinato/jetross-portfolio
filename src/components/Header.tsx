@@ -29,7 +29,7 @@ export default function Header({}: HeaderProps) {
       id="home"
       className="scroll-mt-20 md:scroll-mt-32 flex flex-col justify-center min-h-[75vh] px-4 md:px-6 lg:px-20 mt-28 md:mt-40"
     >
-      <div className="max-w-lg mx-auto w-full ">
+      <div className="max-w-5xl mx-auto w-full ">
         {/* Map Section */}
         <MapComponent
           latitude={8.93}
@@ -120,7 +120,7 @@ export default function Header({}: HeaderProps) {
 
         {/* Description */}
         <div id="about" className="mb-6 md:mb-8">
-          <p className="text-sm md:text-md text-gray-700 dark:text-gray-200 font-light leading-relaxed max-w-3xl">
+          <p className="text-sm md:text-md text-gray-700 dark:text-gray-200 font-light leading-relaxed max-w-4xl">
             {"I'm"} a creative software developer with three years of
             experience. I specialize in creating minimalist and clean UI
             designed softwares with smooth performance.

@@ -3,7 +3,7 @@ import ThemeToggler from "./ThemeToggler";
 const Navbar = () => {
   // Mobile state removed; desktop navbar used on all sizes
   //add more spacing
-  
+
   const navItems = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
@@ -19,8 +19,8 @@ const Navbar = () => {
       {/* Desktop Round Navbar (visible on all breakpoints) */}
       <nav className="fixed top-12 inset-x-0 z-50 transition-colors duration-300">
         {/* Match Header width: center container with max-w-lg and side padding */}
-        <div className="mx-auto w-full max-w-lg px-4 lg:px-0">
-          <div className="w-full backdrop-blur-sm rounded-full px-6 md:px-8 py-3 md:py-4 shadow-lg border border-green-200/50 dark:border-green-600/50">
+        <div className="mx-auto w-full max-w-5xl px-4 lg:px-0">
+          <div className="w-full backdrop-blur-sm rounded-full px-6 md:px-12 py-3 md:py-4 shadow-lg border border-green-200/50 dark:border-green-600/50">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-6 sm:gap-10 md:gap-14">
                 {navItems.map((item) => (
