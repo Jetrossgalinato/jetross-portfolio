@@ -21,8 +21,8 @@ const Navbar = () => {
         {/* Match Header width: center container with max-w-lg and side padding */}
         <div className="mx-auto w-full max-w-5xl px-4 lg:px-0">
           <div className="w-full backdrop-blur-sm rounded-full px-6 md:px-12 py-3 md:py-4 shadow-lg border border-green-200/50 dark:border-green-600/50">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-6 sm:gap-10 md:gap-14">
+            <div className="flex items-center">
+              <div className="flex-1 flex justify-center items-center gap-6 sm:gap-10 md:gap-14">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
