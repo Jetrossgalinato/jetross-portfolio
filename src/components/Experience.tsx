@@ -39,28 +39,30 @@ const Experience = () => {
           Experience
         </h2>
 
-        {/* Tab Navigation */}
-        <div className="flex justify-center gap-2.5 md:gap-3 mb-6 md:mb-8 text-sm">
-          <button
-            onClick={() => setActiveTab("work")}
-            className={`px-26 py-3 cursor-pointer rounded-lg font-medium text-md transition duration-300 ${
-              activeTab === "work"
-                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
-                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-            }`}
-          >
-            Work
-          </button>
-          <button
-            onClick={() => setActiveTab("studies")}
-            className={`px-26 py-3 cursor-pointer rounded-lg font-medium transition duration-300 ${
-              activeTab === "studies"
-                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
-                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-            }`}
-          >
-            Studies
-          </button>
+        {/* Tab Navigation - aligned with TechStack grid */}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex gap-2.5 md:gap-3 mb-6 md:mb-8 text-sm">
+            <button
+              onClick={() => setActiveTab("work")}
+              className={`px-18 py-3 cursor-pointer rounded-lg font-medium text-md transition duration-300 ${
+                activeTab === "work"
+                  ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              Work
+            </button>
+            <button
+              onClick={() => setActiveTab("studies")}
+              className={`px-18 py-3 cursor-pointer rounded-lg font-medium transition duration-300 ${
+                activeTab === "studies"
+                  ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              Studies
+            </button>
+          </div>
         </div>
 
         {/* Experience Timeline */}
