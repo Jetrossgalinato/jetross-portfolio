@@ -96,24 +96,21 @@ export default function TechStackComponent() {
               <div
                 className={`${tech.bgColor} rounded-xl p-2 mb-3 transition-all duration-300 group-hover:scale-110`}
               >
-                {/* Default Icon */}
+                {/* Stack both icons absolutely in one relative wrapper */}
                 <div className="relative w-5 h-5">
                   <Image
                     src={tech.iconUrl}
                     alt={tech.name}
                     fill
                     sizes="20px"
-                    className="transition-opacity duration-300 group-hover:opacity-0 object-contain"
+                    className="transition-opacity duration-300 group-hover:opacity-0 object-contain absolute inset-0"
                   />
-                </div>
-                {/* Hover Icon */}
-                <div className="relative w-5 h-5">
                   <Image
                     src={tech.hoverIconUrl}
                     alt={`${tech.name} hover`}
                     fill
                     sizes="20px"
-                    className="transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-contain"
+                    className="transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-contain absolute inset-0"
                   />
                 </div>
               </div>
