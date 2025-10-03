@@ -14,6 +14,16 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "TerraPrice",
+    description:
+      "A mobile application that allows users to scan construction blueprints and receive AI-powered cost analysis. The app provides detailed material estimates, labor costs, and project budgeting insights to help contractors and builders make informed decisions.",
+    image: "/terraprice.png",
+    techStack: ["Flutter", "Supabase"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: 2,
     title: "Mealmate",
     description:
       "A meal subscription and delivery platform that enables users to order food and subscribe to premium meal plans with exclusive benefits. Features include customizable meal plans, scheduled deliveries, and subscriber rewards.",
@@ -23,7 +33,7 @@ const projects: Project[] = [
     repoUrl: "https://github.com/Jetrossgalinato/meal-subscription-frontend",
   },
   {
-    id: 2,
+    id: 3,
     title: "Finteach",
     description:
       "A financial monitoring system with AI financial advisor that helps you manage your finances. Features smart budgeting recommendations, expense tracking, and personalized financial insights.",
